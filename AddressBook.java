@@ -104,8 +104,35 @@ public class AddressBook {
         }
         else
             System.out.println("Thank You(:");
+
+
+        System.out.println("Do you want to delete any Entries u just created? (y/n)");
+        choice = sc.next();
+        if (choice.equals("Y") || choice.equals("y")) {
+            AddressBook[] removedArray = new AddressBook[contacts.length-1];
+            String name;
+            System.out.println("Please enter the first name of Person u want to edit: ");
+            name = sc.next();
+            for (int i = 0, k=0; i < entries; i++) {
+                if (Objects.equals(contacts[i].firstName, name)) {
+                    continue;
+                }
+                removedArray[k++] = contacts[i];
+            }
+            entries = entries-1;
+            System.arraycopy(removedArray, 0, contacts, 0, entries);
+            for (int i = 0; i < entries; i++) {
+                System.out.println("\t*****Address Book*****\t");
+                System.out.println("Entry: " + (i + 1));
+                System.out.println(contacts[i]);
+            }
+        }
+        else
+            System.out.println("Thank You!!");
     }
 }
+
+
 
    
 
