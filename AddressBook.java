@@ -64,7 +64,6 @@ public class AddressBook {
             contacts[i] = new AddressBook(first, last, address, city, state, zip, phone, email);
         }
         for ( int i = 0 ; i < entries ; i++ ) {
-            System.out.println("\t*****Address Book*****\t");
             System.out.println("Entry: "+(i+1));
             System.out.println(contacts[i]);
         }
